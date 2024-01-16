@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-import pandas as pd
+# import pandas as pd
 
 from .serializers import SignInSerializer,CartProductSerializer,ProductSerializer,OrderProductSerializer,OrderProductExtraSerializer
 
@@ -143,15 +143,15 @@ class OrderProductView(CreateAPIView):
         return Response({'message':'Succesfully saved'},status=200)
 
         
-from openpyxl import load_workbook
+# from openpyxl import load_workbook
 
-class Insert_into_view(APIView):
-    def get(self,request,*args,**kwrgs):
-        df=pd.read_excel('PriceList.xlsx') 
-        for index,data in df.iterrows():
-            print(data)
-            if index>3:
-                Product.objects.create(title=data['Unnamed: 2'],price=float(data['Unnamed: 3']),is_active=True,box=data['Unnamed: 4'])
+# class Insert_into_view(APIView):
+#     def get(self,request,*args,**kwrgs):
+#         df=pd.read_excel('PriceList.xlsx') 
+#         for index,data in df.iterrows():
+#             print(data)
+#             if index>3:
+#                 Product.objects.create(title=data['Unnamed: 2'],price=float(data['Unnamed: 3']),is_active=True,box=data['Unnamed: 4'])
            
 
 
